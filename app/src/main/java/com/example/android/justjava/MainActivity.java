@@ -26,6 +26,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
+import android.widget.*;
+import android.content.*;
 
 /**
  * This app displays an order form to order coffee.
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         if (quantity == 100) {
+            Toast.makeText(getApplicationContext(), "You cannot have more than 100", Toast.LENGTH_SHORT).show();
             return;
         }
         quantity = quantity + 1;
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void decrement(View view) {
         if (quantity == 0) {
+		    Toast.makeText(getApplicationContext(), "You cannot have less than 0", Toast.LENGTH_SHORT).show();
             return;
         }
         quantity = quantity - 1;
